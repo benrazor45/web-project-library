@@ -43,16 +43,16 @@
                         <tbody>
                             <% while (rs.next()) {%>
                                 <tr>
-                                    <td><%= rs.getString("Books_ID")%></td>
-                                    <td><%= rs.getString("Borrower_Name")%></td>
-                                    <td><%= rs.getString("Borrow_Date")%></td>
-                                    <td><%= rs.getString("Return_Date")%></td>
+                                    <td><%= rs.getString("id")%></td>
+                                    <td><%= rs.getString("borrower_name")%></td>
+                                    <td><%= rs.getString("borrow_date")%></td>
+                                    <td><%= rs.getString("return_date")%></td>
                                     <td>
-                                        <form action="delete?id=<%= rs.getString("Books_ID") %>" method="POST"
+                                        <form action="delete?id=<%= rs.getString("id") %>" method="POST"
                                               onsubmit="return confirm('Are you sure want to delete the data?')"
                                         >
-                                            <a href="edit?id=<%= rs.getString("Books_ID") %>" class="btn btn-sm btn-info">Edit</a>
-                                            <input type="hidden" name="Books_ID" value="<%= rs.getString("Books_ID")%>" />
+                                            <a href="edit?id=<%= rs.getString("id") %>" class="btn btn-sm btn-info">Edit</a>
+                                            <input type="hidden" name="Books_ID" value="<%= rs.getString("id")%>" />
                                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                         </form>
                                         
